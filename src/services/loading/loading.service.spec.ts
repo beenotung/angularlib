@@ -15,10 +15,11 @@ describe("LoadingService", () => {
     expect(service).toBeTruthy();
   }));
 
-  it("should load an image url", inject([LoadingService], (service: LoadingService) => {
+  it("should load an image url", inject([LoadingService], (service: LoadingService, done) => {
     service.getRandomLoadingImageUrl().subscribe(
       (url) => {
         expect(typeof url).toEqual("string", "Image Url should be a string");
+        done();
       }
     );
   }));
