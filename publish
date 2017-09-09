@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+function npm_ {
+  CHROME=chrome CHROME_BIN=chrome npm $@
+}
+
 res=$(git status | grep "nothing to commit" | wc -l)
 if [ "$res" != 1 ]; then
   echo "Error: unclean working directory, please commit changes first."
@@ -12,8 +16,8 @@ if [ $# == 1 ]; then
 else
   echo -n "update type `npm version --help | grep -oh \"\\\[.*]\"`: "; read t
 fi
-npm test
+npm_ test
 rm -rf package-lock.json
-npm version "$t"
+npm_ version "$t"
 git push --follow-tags
-npm publish
+npm_ publish
