@@ -7,6 +7,10 @@
     "node_modules/tslint-eslint-rules/dist/rules"
   ],
   "rules": {
+    "align": [
+      true,
+      "statements"
+    ],
     "arrow-parens": false,
     "jsdoc-format": false,
     "space-before-function-paren": false,
@@ -143,8 +147,7 @@
     "ordered-imports": false,
     "pipe-naming": [
       true,
-      "camelCase",
-      "my"
+      "camelCase"
     ],
     "trailing-comma": [
       false,

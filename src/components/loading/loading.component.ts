@@ -19,14 +19,13 @@ export class LoadingComponent implements OnInit {
   @Input()
   imgSrc = LoadingComponent.defaultImgSrc;
 
-  constructor(private loadingService: LoadingService) {
-    console.log("Hello LoadingComponent Component");
+  constructor(private _loadingService: LoadingService) {
   }
 
   async ngOnInit() {
     this.imgSrc = this.imgSrc || LoadingComponent.defaultImgSrc;
     if (!this.imgSrc) {
-      this.loadingService.getRandomLoadingImageUrl()
+      this._loadingService.getRandomLoadingImageUrl()
         .subscribe(url => {
           this.imgSrc = LoadingComponent.defaultImgSrc = url;
         });
