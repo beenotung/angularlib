@@ -29,6 +29,9 @@
     "url": "https://github.com/beenotung/angularlib/issues"
   },
   "homepage": "https://github.com/beenotung/angularlib#readme",
+  "scripts-info": {
+    "tslint:aot": "for debug only. not recommented, since the output maybe very compact"
+  },
   "scripts": {
     "build": "npm run build:esm && npm run build:umd",
     "build:esm": "gulp inline-templates && npm run ngcompile",
@@ -43,7 +46,7 @@
     "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disablePrivateOrInternalSupport",
     "explorer": "source-map-explorer ./dist/index.umd.js",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
-    "lint": "npm run tslint 'src/**/*.ts'",
+    "lint": "npm run tslint",
     "ngcompile": "ngc -p tsconfig-aot.json",
     "postversion": "git push && git push --tags",
     "prebuild": "rimraf dist tmp",
@@ -52,7 +55,8 @@
     "preversion": "npm run ci",
     "test": "karma start",
     "test:watch": "karma start --auto-watch --no-single-run",
-    "tslint": "tslint"
+    "tslint": "tslint --type-check --project tsconfig.json",
+    "tslint:aot": "tslint --type-check --project tsconfig-aot.json"
   },
   "dependencies": {
     "@angular/forms": "^4.0.0",
