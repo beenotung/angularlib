@@ -9,7 +9,7 @@ import {LoadingService} from "../../services/loading/loading.service";
 })
 export class LoadingComponent implements OnInit {
 
-  public static defaultImgSrc: string;
+  public static defaultImgSrc: string = undefined;
 
   @Input()
   imgWidth: number | string;
