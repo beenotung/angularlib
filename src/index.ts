@@ -14,6 +14,7 @@ export {ProgressBrowserXhr} from "./services";
 export {ProgressModule} from "./progress.module";
 
 export {HorizonService} from "./services";
+export {HorizonModule} from "./horizon.module";
 
 export * from "./angular";
 export * from "./ng-chart";
