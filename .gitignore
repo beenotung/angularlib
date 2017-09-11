@@ -23,3 +23,6 @@ coverage/
 dist
 docs
 tmp
+
+# Build files
+dist.list
