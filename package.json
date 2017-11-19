@@ -62,23 +62,26 @@
     "tslint:aot": "tslint --type-check --project tsconfig-aot.json"
   },
   "dependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "rxjs": "^5.0.1",
-    "@beenotung/tslib": "^6.0.1"
+    "@beenotung/tslib": "^8.1.1",
+    "rxjs": "^5.4.3"
   },
   "peerDependencies": {
     "@angular/common": "^4.0.0",
-    "@angular/core": "^4.0.0"
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "rxjs": "^5.0.1"
   },
   "devDependencies": {
     "@angular/cli": "^1.3.2",
-    "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/common": "^4.4.3",
+    "@angular/compiler": "^4.4.3",
+    "@angular/compiler-cli": "^4.4.3",
+    "@angular/core": "^4.4.3",
+    "@angular/forms": "^4.4.3",
+    "@angular/http": "^4.4.3",
+    "@angular/platform-browser": "^4.4.3",
+    "@angular/platform-browser-dynamic": "^4.4.3",
     "@compodoc/compodoc": "^1.0.0-beta.9",
     "@types/jasmine": "^2.5.47",
     "@types/karma": "^0.13.35",
