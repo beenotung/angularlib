@@ -1,11 +1,11 @@
 import {NgModule} from "@angular/core";
 import {LoadingComponent} from "./components/loading/loading.component";
 import {LoadingService} from "./services/loading/loading.service";
-import {HttpModule} from "@angular/http";
 import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-  imports: [HttpModule, CommonModule],
+  imports: [HttpClientModule, CommonModule],
   providers: [
     LoadingService,
   ],

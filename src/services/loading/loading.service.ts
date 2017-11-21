@@ -1,11 +1,11 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class LoadingService {
 
-  constructor(public http: Http) {
+  constructor(public http: HttpClient) {
   }
 
   public getRandomLoadingImageUrl(): Observable<string> {
@@ -13,7 +13,7 @@ export class LoadingService {
     const keyword = "loading-icon";
     const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${keyword}&rating=G`;
     return this.http.get(url)
-      .map(x => x.json())
+      .map(x => x as any)
       .map(x => x.data.image_url)
       ;
   }

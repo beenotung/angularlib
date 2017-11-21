@@ -1,16 +1,16 @@
 import {Injectable} from "@angular/core";
 import "rxjs/add/operator/map";
-import {Http} from "@angular/http";
 import {ProgressService} from "../progress/progress.service";
 import {getHorizon, horizon_api_size, is_debug_load_horizon, setHorizonAPISize} from "@beenotung/tslib/horizon";
 import {createDefer} from "@beenotung/tslib/async";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class HorizonService {
 
   is_debug_load_horizon = is_debug_load_horizon;
 
-  constructor(public http: Http
+  constructor(public http: HttpClient
     , private _progressService: ProgressService) {
   }
 
@@ -24,8 +24,7 @@ export class HorizonService {
       }
     });
     const defer = createDefer<void, string>();
-    this.http.get(url)
-      .map(res => res.text())
+    this.http.get(url, {responseType: "text"})
       .subscribe(
         data => {
           const script = document.createElement("script");

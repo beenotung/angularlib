@@ -1,11 +1,11 @@
 import {NgModule} from "@angular/core";
-import {HttpModule} from "@angular/http";
 import {HorizonService} from "./services/horizon/horizon.service";
 import {ProgressModule} from "./progress.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
-    HttpModule,
+    HttpClientModule,
     ProgressModule,
   ],
   providers: [
