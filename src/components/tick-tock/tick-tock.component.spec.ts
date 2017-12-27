@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
 import {By} from "@angular/platform-browser";
 
-import {TickTockModule} from "../../";
+import {TickTockModule} from "../../tick-tock.module";
 import {TickTockComponent} from "./tick-tock.component";
 
 describe("TickTockComponent", () => {

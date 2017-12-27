@@ -12,8 +12,9 @@ if [ $# == 1 ]; then
 else
   echo -n "update type `npm version --help | grep -oh \"\\\[.*]\"`: "; read t
 fi
-./npm_ test
+./npm_ run ci
 rm -rf package-lock.json
 ./npm_ version "$t"
-git push --follow-tags
-./npm_ publish
+node ./mk-package.js > dist/package.json
+cd dist
+npm publish

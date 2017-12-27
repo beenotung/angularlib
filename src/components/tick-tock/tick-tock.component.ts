@@ -1,6 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-
-import {TickTockService} from "../../services";
+import {TickTockService} from "../../services/tick-tock/tick-tock.service";
 
 @Component({
   selector: "tick-tock",
