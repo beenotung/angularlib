@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import "rxjs/add/operator/map";
 import {ProgressService} from "../progress/progress.service";
-import {getHorizon, horizon_api_size, is_debug_load_horizon, setHorizonAPISize} from "@beenotung/tslib/horizon";
+import {getHorizon, horizon_api_size, is_debug_load_horizon, setHorizonAPISize} from "horizon-utils";
 import {createDefer} from "@beenotung/tslib/async";
 import {HttpClient} from "@angular/common/http";
 

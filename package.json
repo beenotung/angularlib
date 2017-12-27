@@ -69,7 +69,8 @@
     "@angular/http": "^5.0.0",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
-    "@beenotung/tslib": "^8.6.1",
+    "@beenotung/tslib": "^10.1.1",
+    "horizon-utils": "^0.1.0",
     "rxjs": "^5.3.1"
   },
   "peerDependencies": {
