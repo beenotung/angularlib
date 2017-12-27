@@ -7,6 +7,11 @@
     "node_modules/tslint-eslint-rules/dist/rules"
   ],
   "rules": {
+    "no-reference": false,
+    "max-classes-per-file": [
+      false
+    ],
+    "no-namespace": false,
     "align": [
       true,
       "statements"
