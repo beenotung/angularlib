@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "npm run build:esm && npm run build:umd",
-    "build:esm": "gulp inline-templates && npm run ngcompile",
+    "build:esm": "npm run ngcompile",
     "build:esm:watch": "gulp build:esm:watch",
     "build:umd": "webpack --config webpack-umd.config.ts",
     "build:umd:watch": "npm run build:umd -- --watch",
@@ -46,7 +46,9 @@
     "explorer": "source-map-explorer ./dist/index.umd.js",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "lint": "npm run tslint",
+    "prengcompile": "./gen-index && gulp inline-templates",
     "ngcompile": "ngc -p tsconfig-aot.json",
+    "postngcompile": "./rm-index",
     "prebuild": "rimraf dist tmp",
     "prebuild:watch": "rimraf dist tmp",
     "preversion": "npm run ci",
@@ -55,7 +57,8 @@
     "test": "karma start",
     "test:watch": "karma start --auto-watch --no-single-run",
     "tslint": "tslint --type-check --project tsconfig.json",
-    "tslint:aot": "tslint --type-check --project tsconfig-aot.json"
+    "pretslint:aot": "npm run ngcompile",
+    "tslint:aot": "tslint --type-check --project tsconfig-aot.json -c tslint-aot.json"
   },
   "dependencies": {
     "@angular/common": "^5.0.0",
