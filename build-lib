@@ -1,13 +1,18 @@
 #!/bin/bash
-hash yarn 2>/dev/null || npm i -g yarn
 set -e
-yarn install --dev
+set -o pipefail
+
+if [ $(node -v | grep v8 | wc -l) != 1 ]; then
+  echo >&2 "Error: node is not v8"
+  exit 1
+fi
+yarn --offline || yarn || npm i
 if [ -d src/index ]; then
   mv src/index .
 fi
 ./gen-index
-yarn build
+npm run build
 ./rm-index
-mv index src/ || echo ''
+mv index src/ 2>/dev/null || true
 node ./mk-package.js > dist/package.json
 echo "done."
