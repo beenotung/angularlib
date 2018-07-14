@@ -1,6 +1,6 @@
-import {inject, TestBed} from "@angular/core/testing";
+import { inject, TestBed } from "@angular/core/testing";
 
-import {ProgressService} from "./progress.service";
+import { ProgressService } from "./progress.service";
 
 describe("ProgressService", () => {
   beforeEach(() => {
@@ -9,7 +9,10 @@ describe("ProgressService", () => {
     });
   });
 
-  it("should be created", inject([ProgressService], (service: ProgressService) => {
-    expect(service).toBeTruthy();
-  }));
+  it("should be created", inject(
+    [ProgressService],
+    (service: ProgressService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

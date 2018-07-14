@@ -1,12 +1,11 @@
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs/Rx";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/Rx";
 
 /**
  * TickTockService class.
  */
 @Injectable()
 export class TickTockService {
-
   /**
    * Set up timer frequency.
    * @type {number}
@@ -18,9 +17,9 @@ export class TickTockService {
    * @returns Observable<string>
    */
   public getTick(): Observable<string> {
-    return Observable
-      .timer(0, this.TIMEOUT)
-      .map((tick) => TickTockService.getNowString());
+    return Observable.timer(0, this.TIMEOUT).map(tick =>
+      TickTockService.getNowString()
+    );
   }
 
   /**
@@ -46,5 +45,4 @@ export class TickTockService {
 
     return `${hours}:${minutes}:${seconds}`;
   }
-
 }

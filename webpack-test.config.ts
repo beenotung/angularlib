@@ -1,9 +1,9 @@
-import * as webpack from 'webpack';
-import * as path from 'path';
+import * as webpack from "webpack";
+import * as path from "path";
 
 export default {
   resolve: {
-    extensions: [ '.ts', '.js', '.json' ]
+    extensions: [".ts", ".js", ".json"]
   },
   module: {
     rules: [
@@ -11,46 +11,43 @@ export default {
         test: /\.ts$/,
         use: [
           {
-            loader: 'awesome-typescript-loader',
+            loader: "awesome-typescript-loader",
             options: {
-              configFileName: 'tsconfig.json'
+              configFileName: "tsconfig.json"
             }
           },
           {
-            loader: 'angular2-template-loader'
+            loader: "angular2-template-loader"
           }
         ],
-        exclude: [
-          /\.e2e\.ts$/,
-          /node_modules/
-        ]
+        exclude: [/\.e2e\.ts$/, /node_modules/]
       },
 
       {
         test: /.ts$/,
         exclude: /(node_modules|\.spec\.ts|\.e2e\.ts$)/,
-        loader: 'istanbul-instrumenter-loader',
-        enforce: 'post'
+        loader: "istanbul-instrumenter-loader",
+        enforce: "post"
       },
 
       {
         test: /\.json$/,
-        use: 'json-loader'
+        use: "json-loader"
       },
 
       {
         test: /\.css$/,
-        use: ['to-string-loader', 'css-loader']
+        use: ["to-string-loader", "css-loader"]
       },
 
       {
         test: /\.scss$/,
-        use: ['to-string-loader', 'css-loader', 'sass-loader']
+        use: ["to-string-loader", "css-loader", "sass-loader"]
       },
 
       {
         test: /\.html$/,
-        use: 'raw-loader'
+        use: "raw-loader"
       }
     ]
   },
@@ -62,7 +59,7 @@ export default {
 
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      path.join(__dirname, 'src')
+      path.join(__dirname, "src")
     ),
 
     new webpack.NoEmitOnErrorsPlugin()

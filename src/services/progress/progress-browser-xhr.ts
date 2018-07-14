@@ -1,11 +1,10 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 import "rxjs/add/operator/map";
-import {ProgressService} from "./progress.service";
-import {BrowserXhr} from "@angular/http";
+import { ProgressService } from "./progress.service";
+import { BrowserXhr } from "@angular/http";
 
 @Injectable()
 export class ProgressBrowserXhr extends BrowserXhr {
-
   constructor(private _progressService: ProgressService) {
     super();
   }

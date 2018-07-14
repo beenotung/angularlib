@@ -1,7 +1,7 @@
-import {NgZone} from "@angular/core";
-import {ControlValueAccessor} from "@angular/forms";
-import {Observable} from "rxjs/Observable";
-import {createDefer} from "@beenotung/tslib/async";
+import { NgZone } from "@angular/core";
+import { ControlValueAccessor } from "@angular/forms";
+import { Observable } from "rxjs/Observable";
+import { createDefer } from "@beenotung/tslib/async";
 
 /**
  * to usage [(ngModel)] directly
@@ -26,11 +26,9 @@ export class CommonControlValueAccessor<T> implements ControlValueAccessor {
     }
   }
 
-  onChangeCallback(event: any): void {
-  }
+  onChangeCallback(event: any): void {}
 
-  onTouchedCallback(): void {
-  }
+  onTouchedCallback(): void {}
 
   onBlur() {
     this.onTouchedCallback();

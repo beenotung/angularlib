@@ -3,12 +3,12 @@
  */
 
 export type NgChartColor = {
-  backgroundColor: string,
-  borderColor: string,
-  pointBackgroundColor: string,
-  pointBorderColor: string,
-  pointHoverBackgroundColor: string,
-  pointHoverBorderColor: string
+  backgroundColor: string;
+  borderColor: string;
+  pointBackgroundColor: string;
+  pointBorderColor: string;
+  pointHoverBackgroundColor: string;
+  pointHoverBorderColor: string;
 };
 
 /**
@@ -17,7 +17,12 @@ export type NgChartColor = {
  * @param b : number [0..255]
  * @param a [Optional] : number [0..255]
  * */
-export function mkChartColor(r: number, g: number, b: number, a: number = 0): NgChartColor {
+export function mkChartColor(
+  r: number,
+  g: number,
+  b: number,
+  a: number = 0
+): NgChartColor {
   const rgb = r + "," + g + "," + b;
   const rgba = rgb + "," + a;
   return {
@@ -40,7 +45,7 @@ export class NgChartParams {
   lineChartData: LineChartData[];
   lineChartLabels: string[];
   lineChartOptions?: {
-    responsive?: boolean
+    responsive?: boolean;
   };
   lineChartColors?: NgChartColor[];
   lineChartLegend?: boolean;
@@ -50,7 +55,7 @@ export class NgChartParams {
   constructor(data: LineChartData[], labels: string[], type: LineChartType) {
     this.lineChartData = data;
     this.lineChartLabels = labels;
-    this.lineChartOptions = {responsive: true};
+    this.lineChartOptions = { responsive: true };
     this.lineChartLegend = true;
     this.lineChartType = type;
   }

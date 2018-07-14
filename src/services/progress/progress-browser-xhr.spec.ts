@@ -1,7 +1,7 @@
-import {inject, TestBed} from "@angular/core/testing";
+import { inject, TestBed } from "@angular/core/testing";
 
-import {ProgressBrowserXhr} from "./progress-browser-xhr";
-import {ProgressModule} from "../../progress.module";
+import { ProgressBrowserXhr } from "./progress-browser-xhr";
+import { ProgressModule } from "../../progress.module";
 
 describe("ProgressBrowserXhr", () => {
   beforeEach(() => {
@@ -10,7 +10,10 @@ describe("ProgressBrowserXhr", () => {
     });
   });
 
-  it("should be created", inject([ProgressBrowserXhr], (service: ProgressBrowserXhr) => {
-    expect(service).toBeTruthy();
-  }));
+  it("should be created", inject(
+    [ProgressBrowserXhr],
+    (service: ProgressBrowserXhr) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

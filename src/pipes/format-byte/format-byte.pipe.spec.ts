@@ -1,4 +1,4 @@
-import {FormatBytePipe} from "./format-byte.pipe";
+import { FormatBytePipe } from "./format-byte.pipe";
 
 describe("FormatBytePipe", () => {
   it("create an instance", () => {

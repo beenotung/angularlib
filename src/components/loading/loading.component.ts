@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {isDefined} from "@beenotung/tslib";
-import {LoadingService} from "../../services/loading/loading.service";
+import { Component, Input, OnInit } from "@angular/core";
+import { isDefined } from "@beenotung/tslib";
+import { LoadingService } from "../../services/loading/loading.service";
 
 @Component({
   selector: "loading-cmp",
@@ -8,32 +8,25 @@ import {LoadingService} from "../../services/loading/loading.service";
   styleUrls: ["./loading.component.scss"]
 })
 export class LoadingComponent implements OnInit {
-
   public static defaultImgSrc: string = undefined;
 
-  @Input()
-  imgWidth: number | string;
-  @Input()
-  imgHeight: number | string;
+  @Input() imgWidth: number | string;
+  @Input() imgHeight: number | string;
 
-  @Input()
-  imgSrc = LoadingComponent.defaultImgSrc;
+  @Input() imgSrc = LoadingComponent.defaultImgSrc;
 
-  constructor(private _loadingService: LoadingService) {
-  }
+  constructor(private _loadingService: LoadingService) {}
 
   async ngOnInit() {
     this.imgSrc = this.imgSrc || LoadingComponent.defaultImgSrc;
     if (!this.imgSrc) {
-      this._loadingService.getRandomLoadingImageUrl()
-        .subscribe(url => {
-          this.imgSrc = LoadingComponent.defaultImgSrc = url;
-        });
+      this._loadingService.getRandomLoadingImageUrl().subscribe(url => {
+        this.imgSrc = LoadingComponent.defaultImgSrc = url;
+      });
     }
   }
 
   customSize(): boolean {
     return isDefined(this.imgHeight) || isDefined(this.imgWidth);
   }
-
 }

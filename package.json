@@ -59,7 +59,9 @@
     "tslint": "tslint --type-check --project tsconfig.json -c tslint.json",
     "pretslint:aot": "npm run ngcompile",
     "tslint:aot": "tslint --type-check --project tsconfig-aot.json -c tslint-aot.json",
-    "fix": "tslint --fix -p ."
+    "format": "prettier --write \"**/*.ts\" \"**/*.scss\"",
+    "postformat":"tslint --fix -p .",
+    "fix": "npm run format"
   },
   "dependencies": {
     "@angular/common": "^5.0.0",
@@ -70,8 +72,8 @@
     "@angular/http": "^5.0.0",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
-    "@beenotung/tslib": "^10.1.1",
-    "horizon-utils": "^0.1.0"
+    "@beenotung/tslib": "10.1.1",
+    "horizon-utils": "0.1.0"
   },
   "peerDependencies": {
     "@angular/common": "^5.0.0",
@@ -90,6 +92,7 @@
     "codecov": "^2.2.0",
     "codelyzer": "^4.0.1",
     "css-loader": "^0.28.1",
+    "prettier": "^1.13.7",
     "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-inline-ng2-template": "^4.0.0",
