@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+yarn --offline || yarn || npm i
+rm -rf node_modules/@beenotung/tslib/**/index.d.ts
+git submodule update --init
+cd lib/peercare-spec/
+mv dist ../
+rm * -rf
+mv ../dist .

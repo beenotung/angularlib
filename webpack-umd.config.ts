@@ -73,10 +73,12 @@ export default {
       path.join(__dirname, 'src')
     ),
 
+    /*
     new webpack.optimize.UglifyJsPlugin({
       include: /\.min\.js$/,
       sourceMap: true
     }),
+    */
 
     new webpack.BannerPlugin({
       banner: `

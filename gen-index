@@ -4,14 +4,18 @@ function main {
   cd "$1"
   ls \
   | grep -v '^index.ts$' \
+  | grep -v '^typings.d.ts$' \
   | grep -v '.html$' \
   | grep -v '.scss$' \
+  | grep -v '.css$' \
   | grep -v '.json$' \
   | grep -v '.spec.ts' \
   | grep -v '.js$' \
   | grep -v '.js.map$' \
   | grep -v '.md$' \
   | grep -v '.asciidoc$' \
+  | grep -v '.ico$' \
+  | grep -v 'environment' \
   | sed 's/\.ts//' \
   | awk '{print "export * from \"./" $1 "\";"}' \
   > index.ts
